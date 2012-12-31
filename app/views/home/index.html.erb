@@ -1,0 +1,5 @@
+<div class="bloggers">
+	<%= @users.each do |user| %>
+		<p><%= link_to user.email, blog_entries_path(:user_id => user.id) %></p>
+	<% end %>
+</div>

@@ -1,8 +1,25 @@
 class BlogEntriesController < ApplicationController
   # GET /blog_entries
   # GET /blog_entries.json
+
+  before_filter :authenticate_user!, only: [:new, :destroy, :update, :edit, :create]
+
+  def index_by_user
+    @blog_entries = BlogEntry.order("updated_at DESC").find_by_user_id(params[:user_id])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @blog_entries }
+    end
+  end
+
   def index
-    @blog_entries = BlogEntry.order("updated_at DESC").all
+    # @blog_entries = BlogEntry.order("updated_at DESC").all
+    puts 'We are looking for blogs by user_id : ', params[:user_id]
+    
+    @blog_entries = BlogEntry.order("updated_at DESC").find_all_by_user_id(params[:user_id])
+
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +41,7 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries/new
   # GET /blog_entries/new.json
   def new
+
     @blog_entry = BlogEntry.new
 
     respond_to do |format|
@@ -41,6 +59,7 @@ class BlogEntriesController < ApplicationController
   # POST /blog_entries.json
   def create
     @blog_entry = BlogEntry.new(params[:blog_entry])
+    @blog_entry.user_id = current_user.id
 
     respond_to do |format|
       if @blog_entry.save

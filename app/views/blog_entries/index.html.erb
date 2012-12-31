@@ -47,30 +47,42 @@
     padding-left: 25px;
   }
 </style>
-<div class="article">
-  
-    <% @blog_entries.each do |blog|%>
-      <div class="asset">
-        <h1><%= blog.title %></h1>
-      </div>
-      <div class="asset-metabar">
-        <span class="asset-metabar-time asset-metabar-time.nobyline">
-          <%= blog.updated_at %>
-        </span>
-        <div class="asset-metabar-utility">
-          <span class="asset-metabar-share- asset-metabar-item">
-            Share
-          </span>
-        </div>
-      </div>
-      <br/>
-      <br/>
-      <p><%= raw(blog.story) %></p>
-      <hr>
-    <% end %>
-  
-</div>
 
+<ul class="breadcrumb">
+  <li><%= link_to "Return to blog list", root_path %></li>
+  <span class="divider">/</span>
+</ul>
+<br/>
+<br/>
+
+<% if @blog_entries.count == 0 %>
+  No blogs available. Check back later.
+  <br/>
+  <br/>
+<% else %>
+  <div class="article">
+      <% @blog_entries.each do |blog|%>
+        <div class="asset">
+          <h1><%= blog.title %></h1>
+        </div>
+        <div class="asset-metabar">
+          <span class="asset-metabar-time asset-metabar-time.nobyline">
+            <%= blog.updated_at %>
+          </span>
+          <div class="asset-metabar-utility">
+            <span class="asset-metabar-share- asset-metabar-item">
+              Share
+            </span>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <p><%= raw(blog.story) %></p>
+        <hr>
+      <% end %>
+    
+  </div>
+<% end %>
 <br />
 
 

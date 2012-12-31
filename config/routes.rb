@@ -1,6 +1,11 @@
 SaintDavidBlog::Application.routes.draw do
+  get "home/index"
+
+  devise_for :users
+
   resources :blog_entries
-  root :to => 'blog_entries#index'
+  # root :to => 'blog_entries#index'
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

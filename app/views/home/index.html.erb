@@ -1,5 +1,18 @@
-<div class="bloggers">
-	<%= @users.each do |user| %>
-		<p><%= link_to user.email, blog_entries_path(:user_id => user.id) %></p>
-	<% end %>
-</div>
+<style type="text/css">
+  .article {
+    background-color: #F1F8E0;
+    box-shadow: 2px 2px 2px #888888;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+  }
+</style>
+<br/>
+<br/>
+<% @users.each do |user| %>
+	<div class="article">
+		<%= link_to user.email, blog_entries_path(:user_id => user.id) %>
+	</div>
+	<br/>
+<% end %>
+<br/>

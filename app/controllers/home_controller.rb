@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
   def index
-  	@users = User.all
+  	@users = User.order("email ASC").all
 
   	respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @blog_entries }
+      format.json { render json: @users }
     end
   end
 end

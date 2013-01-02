@@ -4,15 +4,6 @@ class BlogEntriesController < ApplicationController
 
   before_filter :authenticate_user!, only: [:new, :destroy, :update, :edit, :create]
 
-  def index_by_user
-    @blog_entries = BlogEntry.order("updated_at DESC").find_by_user_id(params[:user_id])
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @blog_entries }
-    end
-  end
-
   def index
     # @blog_entries = BlogEntry.order("updated_at DESC").all
     puts 'We are looking for blogs by user_id : ', params[:user_id]

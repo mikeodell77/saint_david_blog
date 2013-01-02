@@ -5,12 +5,16 @@
     padding-left: 5px;
     padding-top: 5px;
     padding-right: 5px;
+	color:#2887bf;
+    font-size:14px;
+    font-family:'Lucida Grande', 'Trebuchet', 'Tahoma', 'Verdana', 'Arial';    
   }
 </style>
 <br/>
 <br/>
 <% @users.each do |user| %>
 	<div class="article">
+		<%= image_tag user.image_url(:thumb).to_s %>
 		<%= link_to user.email, blog_entries_path(:user_id => user.id) %>
 	</div>
 	<br/>

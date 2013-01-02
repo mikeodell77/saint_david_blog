@@ -7,6 +7,40 @@
     
     padding-right: 5px;
   }
+
+  .title {
+    color:#2887bf;
+    font-size:20px;
+    line-height:25px;
+    font-family:'Lucida Grande', 'Trebuchet', 'Tahoma', 'Verdana', 'Arial';
+  }
+
+  .asset-metabar {
+    border:1px solid #e6e6e6;
+    border-radius:3px;
+    display:table-cell;
+    margin:20px 0 0 0;
+    width:918px}
+  .asset-metabar-item {
+    float:left;
+    font-size:12px;
+    font-weight:700;
+    line-height:14px;
+    margin:6px 0;
+    padding:2px 10px;
+    position:relative}
+
+  .asset-metabar-avatar {
+    float:left;
+    margin:1px 0 0 1px
+  }
+  
+  .asset-metabar-time {
+    border-left:1px solid #e1e1e1;
+    color:#999;
+    font-style:italic;
+    font-weight:400
+  }
 </style>
 
 <ul class="breadcrumb">
@@ -21,30 +55,23 @@
   <br/>
   <br/>
 <% else %>
-  
-      <% @blog_entries.each do |blog|%>
-      <div class="article">
-        <div class="asset">
-          <h1><%= blog.title %></h1>
-        </div>
-        <div class="asset-metabar">
-          <span class="asset-metabar-time asset-metabar-time.nobyline">
-            <%= blog.updated_at %>
-          </span>
-          <div class="asset-metabar-utility">
-            <span class="asset-metabar-share- asset-metabar-item">
-              Share
-            </span>
-          </div>
-        </div>
-        <br/>
-        <br/>
-        <p><%= raw(blog.story) %></p>
-        <hr>
-        </div>
-      <% end %>
-    
-  
+  <% @blog_entries.each do |blog|%>
+    <div class="article">
+      <div class="title">
+        <h1><%= blog.title %></h1>
+      </div>
+      <div class="asset-metabar">
+        <span class="asset-metabar-time asset-metabar-time.nobyline">
+          Created at:
+          <%= blog.updated_at.in_time_zone('Eastern Time (US & Canada)') %>
+        </span>
+      </div>
+      <br/>
+      <br/>
+      <p><%= raw(blog.story) %></p>
+      <hr>
+    </div>
+  <% end %>
 <% end %>
 <br />
 

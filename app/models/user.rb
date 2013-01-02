@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
 
   has_many :blog_entries
   mount_uploader :image, ImageUploader
+
+  def bio_appender
+  	self.bio
+  end
 end

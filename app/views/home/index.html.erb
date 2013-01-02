@@ -24,7 +24,7 @@
         <%= image_tag user.image_url(:thumb).to_s %>
       </div>
       <div class="span6">
-        <%= link_to raw(user.bio), blog_entries_path(:user_id => user.id) %>
+        <%= link_to raw(user.bio_appender), blog_entries_path(:user_id => user.id) %>
       </div>
       <div class="span4">
         Blog last updated ...

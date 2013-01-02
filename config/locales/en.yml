@@ -8,3 +8,5 @@ en:
   title_placeholder: "Enter a title for this blog entry"
 
   story: "Enter your blog entry here"
+  bio_placeholder: "Enter a short bio for this blogger"
+  bio: "Bio"

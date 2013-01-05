@@ -3,7 +3,11 @@ SaintDavidBlog::Application.routes.draw do
 
   devise_for :users
 
-  resources :blog_entries
+  resources :blog_entries do
+    collection do
+      get 'user_blog_entries'
+    end
+  end
   # root :to => 'blog_entries#index'
   root :to => 'home#index'
 

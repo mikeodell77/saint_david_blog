@@ -2,7 +2,7 @@ class BlogEntriesController < ApplicationController
   # GET /blog_entries
   # GET /blog_entries.json
 
-  before_filter :authenticate_user!, only: [:new, :destroy, :update, :edit, :create]
+  before_filter :authenticate_user!, only: [:new, :destroy, :update, :edit, :create, :user_blog_entries]
 
   def index
     # @blog_entries = BlogEntry.order("updated_at DESC").all
@@ -54,7 +54,7 @@ class BlogEntriesController < ApplicationController
 
     respond_to do |format|
       if @blog_entry.save
-        format.html { redirect_to @blog_entry, notice: 'Blog entry was successfully created.' }
+        format.html { redirect_to user_blog_entries_blog_entries_path(:user_id =>current_user), notice: 'Blog entry was successfully created.' }
         format.json { render json: @blog_entry, status: :created, location: @blog_entry }
       else
         format.html { render action: "new" }
@@ -70,13 +70,17 @@ class BlogEntriesController < ApplicationController
 
     respond_to do |format|
       if @blog_entry.update_attributes(params[:blog_entry])
-        format.html { redirect_to @blog_entry, notice: 'Blog entry was successfully updated.' }
+        format.html { redirect_to user_blog_entries_blog_entries_path(:user_id =>current_user), notice: 'Blog entry was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @blog_entry.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def user_blog_entries
+    @blog_entries = BlogEntry.order("updated_at DESC").find_all_by_user_id(params[:user_id])
   end
 
   # DELETE /blog_entries/1

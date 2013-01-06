@@ -1,4 +1,4 @@
-<%= form_for(@blog_entry) do |f| %>
+<%= form_for(@blog_entry, :html => {:class => "form-horizontal"}) do |f| %>
   <% if @blog_entry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@blog_entry.errors.count, "error") %> prohibited this blog_entry from being saved:</h2>
@@ -11,14 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label t(:title) %><br />
-    <%= f.text_field :title, placeholder: t(:title_placeholder) %>
+  <div class="control-group">
+    <%= f.label t(:title), :for => "blog_entry_title", :class => "control-label" %>
+    <div class="controls">
+        <%= f.text_field :title, placeholder: t(:title_placeholder) %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label t(:story) %><br />
-    <%= f.text_area :story, :class => 'ckeditor' %>
+  <div class="control-group">
+    <%= f.label t(:story), :for => "blog_entry_story", :class => "control-label" %><br />
+    <div class="controls">
+        <%= f.text_area :story, :class => 'ckeditor' %>
+    </div>
   </div>
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>

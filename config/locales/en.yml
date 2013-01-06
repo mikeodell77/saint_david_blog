@@ -4,10 +4,11 @@
 en:
   hello: "Hello world"
 
-  title: "The title for this entry"
+  title: "Title:"
   title_placeholder: "Enter a title for this blog entry"
 
-  story: "Enter your blog entry here"
+  story: "Enter your blog entry:"
   bio_placeholder: "Enter a short bio for this blogger"
   bio: "Bio"
   login: "Login"
+  logout: "Welcome back %{user}, Click here to log off"

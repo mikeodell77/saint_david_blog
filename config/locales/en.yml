@@ -4,6 +4,12 @@
 en:
   hello: "Hello world"
 
+  home: "Home"
+  my_blog: "My Blog Entries"
+  new: "New Blog Entry"
+  edit_profile: "Edit Profile"
+  logout: "Welcome back %{user}, Click here to log off"
+
   title: "Title:"
   title_placeholder: "Enter a title for this blog entry"
 
@@ -11,4 +17,5 @@ en:
   bio_placeholder: "Enter a short bio for this blogger"
   bio: "Bio"
   login: "Login"
-  logout: "Welcome back %{user}, Click here to log off"
+  cancel: "Cancel"
+

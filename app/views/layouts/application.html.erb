@@ -23,6 +23,23 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
+          <% if user_signed_in? %>
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <a class="brand" href="#">Blog Admin</a>
+                  <ul class="nav">
+                    <li><%= link_to t(:home), home_index_path %></li>
+                    <li><%= link_to t(:my_blog), user_blog_entries_blog_entries_path(:user_id => current_user) %></li>
+                    <li><%= link_to t(:new), new_blog_entry_path %></li>
+                    <li><%= link_to t(:edit_profile), edit_user_registration_path %></li>
+                    <li><%= link_to t(:logout, :user => current_user.email), destroy_user_session_path, :method => :delete %></li>
+                  </ul>
+                </div>
+              </div>
+          <% end %>
+
+          <br/>
+          <br/>
           <%= bootstrap_flash %>
           <%= yield %>
         </div>

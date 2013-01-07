@@ -1,17 +1,1 @@
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="#">Blog Admin</a>
-    <ul class="nav">
-      <li><%= link_to "Return to Blog List", home_index_path %></li>
-      <li><%= link_to "Create New Blog Entry", new_blog_entry_path %></li>
-      <li><%= link_to "Edit my profile", edit_user_registration_path %></li>
-      <li><%= link_to t(:logout, :user => current_user.email), destroy_user_session_path, :method => :delete %></li>
-    </ul>
-  </div>
-</div>
-<br/>
-<br/>
 <%= render 'form' %>
-
-<%= link_to 'Show', @blog_entry %> |
-<%= link_to 'Back', blog_entries_path %>

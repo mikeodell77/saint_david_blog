@@ -15,21 +15,7 @@
   }
 
 </style>
-<% if user_signed_in? %>
-    <div class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="#">Blog Admin</a>
-        <ul class="nav">
-          <li><%= link_to "Return to Blog List", home_index_path %></li>
-          <li><%= link_to "Create New Blog Entry", new_blog_entry_path %></li>
-          <li><%= link_to "Edit my profile", edit_user_registration_path %></li>
-          <li><%= link_to t(:logout, :user => current_user.email), destroy_user_session_path, :method => :delete %></li>
-        </ul>
-      </div>
-    </div>
-<% end %>
-<br/>
-<br/>
+
 <% @users.each do |user| %>
 	<div class="article">
     <div class="row-fluid">
@@ -60,6 +46,6 @@
   <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %><br/>
     Create/Edit blog entries <%= link_to "Click Here", user_blog_entries_blog_entries_path(:user_id => current_user) %>
 <% else %>
-  <%= link_to t(:login), new_user_session_path %>
+  <%= link_to t(:login), user_blog_entries_blog_entries_path(:user_id => current_user) %>
 <% end %>
 

@@ -17,14 +17,10 @@
         <%= f.text_field :title, placeholder: t(:title_placeholder) %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label t(:story), :for => "blog_entry_story", :class => "control-label" %><br />
-    <div class="controls">
-        <%= f.text_area :story, :class => 'ckeditor' %>
-    </div>
-  </div>
+  <%= f.text_area :story, :class => 'ckeditor' %>
+
   <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn" %> <%= link_to t(:cancel), user_blog_entries_blog_entries_path(:user_id => current_user), :class => "btn" %>
   </div>
 <% end %>

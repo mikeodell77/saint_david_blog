@@ -43,20 +43,6 @@
     }
 </style>
 
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="#">Blog Admin</a>
-    <ul class="nav">
-      <li><%= link_to "Return to Blog List", home_index_path %></li>
-      <li><%= link_to "Create New Blog Entry", new_blog_entry_path %></li>
-      <li><%= link_to "Edit my profile", edit_user_registration_path %></li>
-      <li><%= link_to t(:logout, :user => current_user.email), destroy_user_session_path, :method => :delete %></li>
-    </ul>
-  </div>
-</div>
-<br/>
-<br/>
-
 <% if @blog_entries.count == 0 %>
     No blogs available. Check back later.
     <br/>
@@ -77,7 +63,7 @@
           <br/>
           <p><%= raw(blog.story) %></p>
           <% if user_signed_in? && blog.user_id == current_user.id  %>
-            <p> <%= link_to "Edit Entry", edit_blog_entry_path(blog.id), :class => "btn" %></p>
+            <p> <%= link_to "Edit Entry", edit_blog_entry_path(blog.id), :class => "btn" %> <%= link_to "Delete Entry", blog_entry_path(blog.id), :method => :delete, :class => "btn" %></p>
           <% end %>
           <hr>
         </div>

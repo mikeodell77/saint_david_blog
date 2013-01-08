@@ -42,6 +42,13 @@
     font-weight:400
   }
 </style>
+<% unless user_signed_in? %>
+    <ul class="breadcrumb">
+        <li><%= link_to t(:home), home_index_path %> <span class="divider">/</span></li>
+        <li class="active">blog</li>
+    </ul>
+<% end %>
+
 
 <% if @blog_entries.count == 0 %>
   No blogs available. Check back later.

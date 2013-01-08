@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   has_many :blog_entries
+
+  validates :bio, :presence => true
+
   mount_uploader :image, ImageUploader
 
 

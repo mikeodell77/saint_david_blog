@@ -20,7 +20,9 @@
 	<div class="article">
     <div class="row-fluid">
       <div class="span2">
-        <%= image_tag user.image_url(:thumb).to_s %>
+        <% unless user.image_url.nil? %>
+            <%= image_tag user.image_url(:thumb).to_s %>
+        <% end %>
       </div>
       <div class="span6">
         <%= link_to raw(user.bio_appender), blog_entries_path(:user_id => user.id) %>

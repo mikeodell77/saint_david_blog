@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9718d1a-f349-49fa-9591-eab1addaf056" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/blog_entries/index.html.erb" afterPath="$PROJECT_DIR$/app/views/blog_entries/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
     </list>
     <ignored path="SaintDavidBlog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +28,7 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/blog_entries/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1046" selection-end="1046" vertical-scroll-proportion="-6.96">
+            <state line="50" column="0" selection-start="1046" selection-end="1046" vertical-scroll-proportion="-3.12">
               <folding>
                 <element signature="e#924#932#0" expanded="true" />
               </folding>
@@ -38,10 +36,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.21859297">
+              <folding>
+                <marker date="1357613667000" expanded="true" signature="733:942" placeholder="unless ... end" />
+                <element signature="e#1358#1367#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="0" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.79899496">
+            <state line="19" column="41" selection-start="721" selection-end="721" vertical-scroll-proportion="0.08">
               <folding />
             </state>
           </provider>
@@ -72,9 +82,9 @@
         <option value="$PROJECT_DIR$/app/views/blog_entries/user_blog_entries.erb" />
         <option value="$PROJECT_DIR$/app/models/blog_entry.rb" />
         <option value="$PROJECT_DIR$/app/controllers/blog_entries_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/blog_entries/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
       </list>
     </option>
   </component>
@@ -752,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="31" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/blog_entries/user_blog_entries.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="65" column="70" selection-start="1679" selection-end="1679" vertical-scroll-proportion="1.0254042">
@@ -773,19 +776,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="41" selection-start="721" selection-end="721" vertical-scroll-proportion="0.08">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/blog_entries/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1046" selection-end="1046" vertical-scroll-proportion="-6.96">
+        <state line="50" column="0" selection-start="1046" selection-end="1046" vertical-scroll-proportion="-3.12">
           <folding>
             <element signature="e#924#932#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.79899496">
-          <folding />
+        <state line="22" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.21859297">
+          <folding>
+            <marker date="1357613667000" expanded="true" signature="733:942" placeholder="unless ... end" />
+            <element signature="e#1358#1367#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

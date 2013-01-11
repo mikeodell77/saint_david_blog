@@ -61,7 +61,7 @@
           </div>
           <br/>
           <br/>
-          <p><%= raw(truncate(blog.story, :length => 25, :omission => (link_to "...", home_index_path))) %></p>
+          <p><%= raw(blog.story) %></p>
           <% if user_signed_in? && blog.user_id == current_user.id  %>
             <p> <%= link_to "Edit Entry", edit_blog_entry_path(blog.id), :class => "btn" %> <%= link_to "Delete Entry", blog_entry_path(blog.id), :method => :delete, :class => "btn" %></p>
           <% end %>

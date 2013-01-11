@@ -80,6 +80,8 @@ class BlogEntriesController < ApplicationController
   end
 
   def user_blog_entries
+    puts 'found user ' + params[:user_id]
+
     @blog_entries = BlogEntry.order("updated_at DESC").find_all_by_user_id(params[:user_id])
   end
 

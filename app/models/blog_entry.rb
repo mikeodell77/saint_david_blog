@@ -3,4 +3,6 @@ class BlogEntry < ActiveRecord::Base
   belongs_to :user
 
   validates :title, :story, :presence => true
+
+  opinio_subjectum
 end

@@ -69,6 +69,8 @@
       <br/>
       <br/>
       <p><%= raw(blog.story) %></p>
+      <br/>
+      <%= comments_for blog %>
       <% if user_signed_in? && blog.user_id == current_user.id %>
           <p> <%= link_to "Edit Entry", edit_blog_entry_path(blog.id), :class => "btn" %></p>
       <% end %>

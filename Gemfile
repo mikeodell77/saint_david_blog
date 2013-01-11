@@ -34,6 +34,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
+gem "opinio"
 
 
 # To use ActiveModel has_secure_password
@@ -50,3 +51,5 @@ gem 'carrierwave'
 
 # To use debugger
 # gem 'debugger'
+
+gem "kaminari"

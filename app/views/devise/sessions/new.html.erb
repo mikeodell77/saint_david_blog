@@ -1,17 +1,74 @@
-<h2>Sign in</h2>
+<style type="text/css">
+  .article {
+    background-color: #F1F8E0;
+    box-shadow: 5px 5px 5px #888888;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 40%;
+    margin: 0 auto;
+    padding-right: 5px;
+  }
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  .title {
+    color:#2887bf;
+    font-size:20px;
+    line-height:25px;
+    font-family:'Lucida Grande', 'Trebuchet', 'Tahoma', 'Verdana', 'Arial';
+  }
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  .asset-metabar {
+    border:1px solid #e6e6e6;
+    border-radius:3px;
+    display:table-cell;
+    margin:20px 0 0 0;
+    width:918px}
+  .asset-metabar-item {
+    float:left;
+    font-size:12px;
+    font-weight:700;
+    line-height:14px;
+    margin:6px 0;
+    padding:2px 10px;
+    position:relative}
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+  .asset-metabar-avatar {
+    float:left;
+    margin:1px 0 0 1px
+  }
+  
+  .asset-metabar-time {
+    border-left:1px solid #e1e1e1;
+    color:#999;
+    font-style:italic;
+    font-weight:400
+  }
+</style>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+<div class="article">
+	<%= form_for(resource, :as => resource_name, :html => {:class => "form-horizontal"}, :url => session_path(resource_name)) do |f| %>
+		<div class="control-group">
+			<%= f.label :email, :class => "control-label" %>
+			<div class="controls">
+				<%= f.email_field :email, :placeholder => t(:username) %>
+			</div>
+		</div>
+		<div class="control-group">
+			<%= f.label :password, :class => "control-label" %>
+			<div class="controls">
+				<%= f.password_field :password, :placeholder => t(:password) %>
+			</div>
+		</div>
+		<% if devise_mapping.rememberable? -%>
+			<div class="control-group">
+		    <div class="controls">
+		      <label class="checkbox">
+		        <input type="checkbox"> Remember me
+		      </label>
+		      <%= f.submit "Sign in", :class => "btn" %>
+		    </div>
+		<% end -%>
+	  </div>
+	<% end -%>
 
-<%= render "devise/shared/links" %>
+	<%= render "devise/shared/links" %>
+</div>

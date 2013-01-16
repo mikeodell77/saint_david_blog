@@ -19,3 +19,8 @@ en:
   login: "Login"
   cancel: "Cancel"
 
+
+  # login page
+  username: "Email"
+  password: "Password"
+

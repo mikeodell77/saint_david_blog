@@ -66,11 +66,10 @@
           <%= blog.updated_at.in_time_zone('Eastern Time (US & Canada)') %>
         </span>
       </div>
+      <p><%= truncate_html(blog.story, :length => 40) %><%= link_to "Read More", blog_entry_path(blog.id) %></p>
       <br/>
-      <br/>
-      <p><%= raw(blog.story) %></p>
-      <br/>
-      <%= comments_for blog %>
+
+
       <% if user_signed_in? && blog.user_id == current_user.id %>
           <p> <%= link_to "Edit Entry", edit_blog_entry_path(blog.id), :class => "btn" %></p>
       <% end %>

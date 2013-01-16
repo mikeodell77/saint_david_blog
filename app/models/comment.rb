@@ -1,3 +1,5 @@
 class Comment < ActiveRecord::Base
-  opinio
+  attr_accessible :blog_entry_id, :comments, :name
+
+  belongs_to :blog_entry
 end

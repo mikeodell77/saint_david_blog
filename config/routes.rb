@@ -1,12 +1,12 @@
 SaintDavidBlog::Application.routes.draw do
-  opinio_model
+  resources :comments
+
 
   get "home/index"
 
   devise_for :users
 
   resources :blog_entries do
-    opinio
     collection do
       get 'user_blog_entries'
     end

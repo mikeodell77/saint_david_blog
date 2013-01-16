@@ -75,10 +75,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.5.0)
-    opinio (0.6)
-      jquery-rails
-      kaminari
-      rails (~> 3)
     orm_adapter (0.4.0)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -128,6 +124,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.9.1)
     twitter-bootstrap-rails (2.2.0)
       actionpack (>= 3.1)
       execjs
@@ -150,12 +147,12 @@ DEPENDENCIES
   jquery-rails
   kaminari
   less-rails
-  opinio
   pg
   rails (= 3.2.11)
   rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
+  truncate_html
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

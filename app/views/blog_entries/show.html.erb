@@ -1,15 +1,91 @@
+<style type="text/css">
+    .article {
+        background-color: #F1F8E0;
+        box-shadow: 5px 5px 5px #888888;
+        padding-left: 5px;
+        padding-top: 5px;
+
+        padding-right: 5px;
+    }
+
+    .title {
+        color:#2887bf;
+        font-size:20px;
+        line-height:25px;
+        font-family:'Lucida Grande', 'Trebuchet', 'Tahoma', 'Verdana', 'Arial';
+    }
+
+    .asset-metabar {
+        border:1px solid #e6e6e6;
+        border-radius:3px;
+        display:table-cell;
+        margin:20px 0 0 0;
+        width:918px}
+    .asset-metabar-item {
+        float:left;
+        font-size:12px;
+        font-weight:700;
+        line-height:14px;
+        margin:6px 0;
+        padding:2px 10px;
+        position:relative}
+
+    .asset-metabar-avatar {
+        float:left;
+        margin:1px 0 0 1px
+    }
+
+    .asset-metabar-time {
+        border-left:1px solid #e1e1e1;
+        color:#999;
+        font-style:italic;
+        font-weight:400
+    }
+</style>
+<% unless user_signed_in? %>
+    <ul class="breadcrumb">
+      <li><%= link_to_function t(:home), "history.back()" %> <span class="divider">/</span></li>
+      <li class="active">blog</li>
+    </ul>
+<% end %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= raw(@blog_entry.title) %>
-</p>
+<div class="article">
+  <div class="title">
+    <p>
+      <h1><%= raw(@blog_entry.title) %></h1>
+    </p>
 
-<p>
-  <b>Story:</b>
-  <%= raw(@blog_entry.story) %>
-</p>
+    <div class="asset-metabar">
+        <span class="asset-metabar-time asset-metabar-time.nobyline">
+          Created at:
+          <%= @blog_entry.updated_at.in_time_zone('Eastern Time (US & Canada)') %>
+        </span>
+    </div>
+    <br/>
+    <br/>
 
+    <p>
+      <b>Story:</b>
+      <%= raw(@blog_entry.story) %>
+    </p>
+    <br/>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'saintdavidblog'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_blog_entry_path(@blog_entry) %> |
 <%= link_to 'Back', blog_entries_path %>

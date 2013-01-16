@@ -4,5 +4,4 @@ class BlogEntry < ActiveRecord::Base
 
   validates :title, :story, :presence => true
 
-  opinio_subjectum
 end

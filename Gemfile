@@ -34,7 +34,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
-gem "opinio"
+gem 'truncate_html'
 
 
 # To use ActiveModel has_secure_password

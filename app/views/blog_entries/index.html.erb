@@ -66,7 +66,7 @@
           <%= blog.updated_at.in_time_zone('Eastern Time (US & Canada)') %>
         </span>
       </div>
-      <p><%= truncate_html(blog.story, :length => 40) %><%= link_to "Read More", blog_entry_path(blog.id) %></p>
+      <p><%= truncate_html(blog.story, :length => 400) %><%= link_to "Read More", blog_entry_path(blog.id) %></p>
       <br/>
 
 

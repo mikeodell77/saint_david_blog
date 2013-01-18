@@ -61,6 +61,10 @@
           </div>
           <br/>
           <br/>
+          <% unless blog.image_url.nil? %>
+            <%= image_tag blog.image_url(:medium).to_s, :style => "float:right;" %>
+        <% end %>
+        <br/>
           <p><%= raw(blog.story) %></p>
           <% if user_signed_in? && blog.user_id == current_user.id  %>
             <p> <%= link_to "Edit Entry", edit_blog_entry_path(blog.id), :class => "btn" %> <%= link_to "Delete Entry", blog_entry_path(blog.id), :method => :delete, :class => "btn" %></p>

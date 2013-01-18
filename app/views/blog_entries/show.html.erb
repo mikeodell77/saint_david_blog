@@ -64,7 +64,9 @@
     </div>
     <br/>
     <br/>
-
+    <% unless @blog_entry.image_url.nil? %>
+            <%= image_tag @blog_entry.image_url(:medium).to_s, :style => "float:right;" %>
+        <% end %>
     <p>
       <%= raw(@blog_entry.story) %>
     </p>

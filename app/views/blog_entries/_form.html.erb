@@ -19,6 +19,9 @@
   </div>
   <%= f.text_area :story, :class => 'ckeditor' %>
 
+  <div class="">Upload an image to be used as your avatar. <br/> <%= f.file_field :image %> 
+  </div>
+
   <br/>
   <div class="actions">
     <%= f.submit :class => "btn" %> <%= link_to t(:cancel), user_blog_entries_blog_entries_path(:user_id => current_user), :class => "btn" %>

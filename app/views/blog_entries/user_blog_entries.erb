@@ -60,10 +60,6 @@
         </span>
           </div>
           <br/>
-          <br/>
-          <% unless blog.image_url.nil? %>
-            <%= image_tag blog.image_url(:medium).to_s, :style => "float:right;" %>
-        <% end %>
         <br/>
           <p><%= raw(blog.story) %></p>
           <% if user_signed_in? && blog.user_id == current_user.id  %>

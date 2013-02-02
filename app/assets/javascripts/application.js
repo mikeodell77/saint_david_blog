@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+//= require social-share-button
 //= require ckeditor-jquery

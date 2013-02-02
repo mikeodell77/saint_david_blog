@@ -60,6 +60,7 @@
         <span class="asset-metabar-time asset-metabar-time.nobyline">
           Created at:
           <%= @blog_entry.updated_at.in_time_zone('Eastern Time (US & Canada)') %>
+          <%= social_share_button_tag(@blog_entry.title) %>
         </span>
     </div>
     <br/>

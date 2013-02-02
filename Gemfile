@@ -35,6 +35,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'truncate_html'
+gem 'social-share-button'
 
 
 # To use ActiveModel has_secure_password
